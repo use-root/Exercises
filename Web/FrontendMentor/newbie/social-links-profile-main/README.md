@@ -6,8 +6,6 @@
 
 ![Design preview for the Social links profile coding challenge](./build/assets/images/ilustration/preview.jpg)
 
-
-
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
