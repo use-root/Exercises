@@ -90,11 +90,10 @@ jobs:
           else
             change_folder=$(git diff-tree --no-commit-id --name-only -r HEAD | grep "Katas/CP" | head -n 1 | cut -d/ -f1-3)
           fi
-          echo "Folder detected: $change_folder"
-          cd $change_folder
-          echo "Name dir: $name_dir"
-          chmod +x test_runner.sh
-          ./test_runner.sh $name_dir
+          if [[ $change_folder != "Katas/CP/test_runner.sh" ]]; then
+            chmod +x test_runner.sh
+            ./test_runner.sh $change_folder
+          fi
   test-bash_offensive:
     needs: changes
     if: ${{ needs.changes.outputs.bash_offensive == 'true' }}
