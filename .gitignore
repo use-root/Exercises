@@ -3,4 +3,4 @@ labs/
 *.pka
 *.cpython-314.pyc
 *.*.pyc
-
+*.v2*.cpp
