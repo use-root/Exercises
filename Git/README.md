@@ -4,8 +4,8 @@ Git is not merely a version control system; it is a **Content-Addressable Storag
 
 **Index:**
 
-- [Conventional Commits](./Commits_Convention.md)
-- [Configure SSH_KEY in your Linux](./SSH_KEY.md)
+- [Conventional Commits](./docs/Commits_Convention.md)
+- [Configure SSH_KEY in your Linux](./docs/SSH_KEY.md)
 - [The Heart of Git ](#1-the-heart-of-git-the-git-directory)
 - [Storage Optimization](#2-storage-optimization-object-sharding)
 - [Conventional Commits](#conventional-commits)
@@ -14,8 +14,7 @@ Git is not merely a version control system; it is a **Content-Addressable Storag
 - [Technical Plumbing Commands](#5-technical-plumbing-commands)
 - [Branching and Merge](#6-branching-and-merging)
 - [Pull Request](#7-collaborative-workflow-the-pull-request-pr)
-- [Github Actions](./GITHUB_ACTIONS.md)
-
+- [Github Actions](./docs/GITHUB_ACTIONS.md)
 
 ### 1. The Heart of Git: The `.git` Directory
 
