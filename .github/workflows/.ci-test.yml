@@ -86,14 +86,22 @@ jobs:
       - name: Run Kata Test in C++
         run: |
           if [ "${{ github.event_name }}" == "pull_request" ]; then
-            change_folder=$(git diff --name-only origin/main...HEAD | grep "Katas/CP" | head -n 1 | cut -d/ -f1-2)
-            name_dir=$(git diff --name-only origin/main...HEAD | grep "Katas/CP" | head -n 1 | cut -d/ -f3)
+            RANGE="origin/main...HEAD"
           else
-            change_folder=$(git diff-tree --no-commit-id --name-only -r HEAD | grep "Katas/CP" | head -n 1 | cut -d/ -f1-2)
-            name_dir=$(git diff-tree --no-commit-id --name-only -r HEAD | grep "Katas/CP" | head -n 1 | cut -d/ -f3)
+            RANGE="HEAD~1 HEAD"
           fi
-          cd $change_folder
-          bash test_runner.sh $name_dir
+          EXERCISES=$(git diff --name-only $RANGE | grep "Katas/CP" | cut -d/ -f3 | sort -u)
+          if [ -z "$EXERCISES" ];then
+            echo  "No changes detected in Katas/CP directories."
+            exit 0;
+          fi
+
+          cd Katas/CP
+
+          for folder in "$EXERCISES"; do
+            echo "Testing exercises in folder: $folder"
+            bash test_runner.sh $folder
+          done
   test-bash_offensive:
     needs: changes
     if: ${{ needs.changes.outputs.bash_offensive == 'true' }}
