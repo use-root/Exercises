@@ -4,6 +4,7 @@ Git is not merely a version control system; it is a **Content-Addressable Storag
 
 **Index:**
 
+- [Set Upstream](./docs/Set_Upstream.md)
 - [Conventional Commits](./docs/Commits_Convention.md)
 - [Configure SSH_KEY in your Linux](./docs/SSH_KEY.md)
 - [The Heart of Git ](#1-the-heart-of-git-the-git-directory)
