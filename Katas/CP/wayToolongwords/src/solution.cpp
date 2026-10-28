@@ -22,10 +22,11 @@ std::vector<std::string> process(std::vector<std::string> &words) {
 }
 
 int main() {
-
+  std::ios_base::sync_with_stdio(false);
   int n;
   std::cin >> n;
   std::vector<std::string> words(n);
+
   for (int i = 0; i < n; i++)
     std::cin >> words[i];
 
