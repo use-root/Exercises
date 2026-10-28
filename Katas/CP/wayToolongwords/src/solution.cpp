@@ -22,7 +22,7 @@ std::vector<std::string> process(std::vector<std::string> &words) {
 }
 
 int main() {
-  ios_base::sync_with_stdio(false);
+  std::ios_base::sync_with_stdio(false);
   int n;
   std::cin >> n;
   std::vector<std::string> words(n);
