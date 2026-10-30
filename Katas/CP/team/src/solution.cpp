@@ -14,16 +14,17 @@ int getKnowingProblems(int *problems, int n) {
 int main() {
   std::ios_base::sync_with_stdio(false);
   std::cin.tie(NULL);
-  int n;
-  std::cin >> n;
-  std::string problem;
-  int problems[n];
-  std::cin.ignore();
+  int n, num;
   int total = 0;
-  int num;
+  std::string p;
+  std::cin >> n;
+  int problems[n];
+
+  std::cin.ignore();
+
   for (int i = 0; i < n; i++) {
-    getline(std::cin, problem);
-    std::stringstream ss(problem);
+    getline(std::cin, p);
+    std::stringstream ss(p);
     while (ss >> num) {
       total += num;
     }
